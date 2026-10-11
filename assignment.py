@@ -1,9 +1,10 @@
-# Python Assignment
+# Python Programming Assignment
 # Name: Karanki Mahesh
 
+
 # --------------------------------------------------
-# Program 1:
-# Find numbers between 2000 and 3200 which are
+# Question 1
+# Find all numbers between 2000 and 3200 which are
 # divisible by 7 but are not multiples of 3.
 # --------------------------------------------------
 
@@ -13,34 +14,36 @@ for i in range(2000, 3201):
     if i % 7 == 0 and i % 3 != 0:
         numbers.append(str(i))
 
-print("1. Numbers divisible by 7 but not by 3:")
+print("Question 1 Output:")
 print(",".join(numbers))
 
 
 # --------------------------------------------------
-# Program 2:
-# Convert a list of characters into a string.
+# Question 2
+# Given a list of characters, convert it into a string.
+# Input is given by the user.
 # --------------------------------------------------
 
-characters = ["C", "o", "d", "i", "n", "g"]
+characters = input("\nEnter characters separated by spaces: ").split()
 
 result = "".join(characters)
 
-print("\n2. Converted string:")
+print("Question 2 Output:")
 print(result)
 
 
 # --------------------------------------------------
-# Program 3:
-# Generate a dictionary containing (i, i*i)
-# for numbers from 1 to n.
+# Question 3
+# Generate a dictionary containing (i, i*i).
+# Input n is given by the user.
 # --------------------------------------------------
 
-n = int(input("Enter a number: "))
+n = int(input("\nEnter a number: "))
 
 result = {}
 
 for i in range(1, n + 1):
     result[i] = i * i
 
+print("Question 3 Output:")
 print(result)
