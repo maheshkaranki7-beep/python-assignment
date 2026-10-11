@@ -213,18 +213,20 @@ print(result)
 
         <!-- Question 3 -->
 
-        <div class="question">
+       <!-- Question 3 -->
 
-            <h2>3. Generate a Dictionary</h2>
+<div class="question">
 
-            <p>
-                With a given integral number n, write a program to generate
-                a dictionary that contains (i, i*i).
-            </p>
+    <h2>3. Generate a Dictionary</h2>
 
-            <h3>Python Code</h3>
+    <p>
+        With a given integral number n, write a program to generate
+        a dictionary that contains (i, i*i).
+    </p>
 
-            <pre>
+    <h3>Python Code</h3>
+
+    <pre>
 n = int(input("Enter a number: "))
 
 result = {}
@@ -233,28 +235,51 @@ for i in range(1, n + 1):
     result[i] = i * i
 
 print(result)
-            </pre>
+    </pre>
 
-            <h3>Example Input</h3>
+    <h3>Enter Number</h3>
 
-            <div class="output">
-                Enter a number: 5
-            </div>
+    <input
+        type="number"
+        id="numberInput"
+        placeholder="Enter n"
+        min="1"
+    >
 
-            <h3>Output</h3>
+    <button onclick="generateDictionary()">
+        Generate Dictionary
+    </button>
 
-            <div class="output">
-                {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
-            </div>
+    <h3>Output</h3>
 
-        </div>
-
+    <div class="output" id="dictionaryOutput">
+        Enter a number above.
     </div>
 
+</div>
 
-    <div class="footer">
-        Python Programming Assignment &nbsp; | &nbsp; Karanki Mahesh
-    </div>
+<script>
 
-</body>
-</html>
+function generateDictionary() {
+
+    let n = document.getElementById("numberInput").value;
+
+    if (n === "" || n < 1) {
+        document.getElementById("dictionaryOutput").innerHTML =
+            "Please enter a positive integer.";
+        return;
+    }
+
+    n = parseInt(n);
+
+    let result = {};
+
+    for (let i = 1; i <= n; i++) {
+        result[i] = i * i;
+    }
+
+    document.getElementById("dictionaryOutput").innerHTML =
+        JSON.stringify(result);
+}
+
+</script>
