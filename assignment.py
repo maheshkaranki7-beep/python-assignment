@@ -36,12 +36,11 @@ print(result)
 # for numbers from 1 to n.
 # --------------------------------------------------
 
-n = int(input("\n3. Enter a number: "))
+n = int(input("Enter a number: "))
 
-square_dictionary = {}
+result = {}
 
 for i in range(1, n + 1):
-    square_dictionary[i] = i * i
+    result[i] = i * i
 
-print("Dictionary:")
-print(square_dictionary)
+print(result)
