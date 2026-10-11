@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Python Programming Assignment</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -19,7 +24,7 @@
         }
 
         .header {
-            background: #ffffff;
+            background: white;
             border-bottom: 4px solid #1769d1;
             padding: 35px 20px;
             text-align: center;
@@ -32,7 +37,7 @@
         }
 
         .header p {
-            margin: 10px 0 0;
+            margin-top: 10px;
             color: #666;
             font-size: 16px;
         }
@@ -99,6 +104,32 @@
             padding: 15px;
             border-radius: 5px;
             font-family: Consolas, monospace;
+            word-break: break-word;
+        }
+
+        input {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            background: #1769d1;
+            color: white;
+            border: none;
+            padding: 11px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: #0e4fa8;
         }
 
         .footer {
@@ -108,52 +139,70 @@
             font-size: 14px;
         }
 
-        @media (max-width: 600px) {
-
-            .header h1 {
-                font-size: 26px;
-            }
-
-            .container {
-                width: 94%;
-            }
-
-            .question {
-                padding: 20px;
-            }
-        }
     </style>
+
 </head>
+
 
 <body>
 
+
+    <!-- HEADER -->
+
     <div class="header">
+
         <h1>Python Programming Assignment</h1>
-        <p>Python Programming Solutions</p>
+
+        <p>
+            Python Programming Solutions
+        </p>
+
     </div>
+
 
     <div class="container">
 
-        <!-- Student Information -->
+
+        <!-- STUDENT INFORMATION -->
 
         <div class="student-info">
-            <p><strong>Name:</strong> Karanki Mahesh</p>
-            <p><strong>Language:</strong> Python 3</p>
-            <p><strong>Assignment:</strong> Python Programming</p>
+
+            <p>
+                <strong>Name:</strong>
+                Karanki Mahesh
+            </p>
+
+            <p>
+                <strong>Language:</strong>
+                Python 3
+            </p>
+
+            <p>
+                <strong>Assignment:</strong>
+                Python Programming
+            </p>
+
         </div>
 
 
-        <!-- Question 1 -->
+
+        <!-- ================================= -->
+        <!-- QUESTION 1 -->
+        <!-- ================================= -->
 
         <div class="question">
 
-            <h2>1. Numbers Divisible by 7</h2>
+            <h2>
+                1. Numbers Divisible by 7
+            </h2>
 
             <p>
-                Write a program to find all numbers between 2000 and 3200
-                which are divisible by 7 but are not multiples of 3.
+                Write a program which will find all such numbers
+                which are divisible by 7 but are not a multiple
+                of 3, between 2000 and 3200.
                 Print the output as a comma-separated sequence.
             </p>
+
 
             <h3>Python Code</h3>
 
@@ -167,66 +216,93 @@ for i in range(2000, 3201):
 print(",".join(numbers))
             </pre>
 
+
             <h3>Output</h3>
 
             <div class="output">
+
                 2002,2009,2016,2023,2030,2037,2044,...
+
             </div>
 
         </div>
 
 
-        <!-- Question 2 -->
+
+        <!-- ================================= -->
+        <!-- QUESTION 2 -->
+        <!-- ================================= -->
 
         <div class="question">
 
-            <h2>2. Convert List of Characters into String</h2>
+            <h2>
+                2. Convert List of Characters into String
+            </h2>
 
             <p>
                 Given a list of characters, convert it into a string.
             </p>
 
-            <h3>Example Input</h3>
-
-            <pre>
-["C", "o", "d", "i", "n", "g"]
-            </pre>
 
             <h3>Python Code</h3>
 
             <pre>
-characters = ["C", "o", "d", "i", "n", "g"]
+characters = input("Enter characters separated by spaces: ").split()
 
 result = "".join(characters)
 
 print(result)
             </pre>
 
+
+            <h3>Enter Characters</h3>
+
+            <input
+                type="text"
+                id="charactersInput"
+                placeholder="Example: C o d i n g"
+            >
+
+            <br>
+
+            <button onclick="convertString()">
+                Convert to String
+            </button>
+
+
             <h3>Output</h3>
 
-            <div class="output">
-                Coding
+            <div
+                class="output"
+                id="stringOutput"
+            >
+                Enter characters above.
             </div>
 
         </div>
 
 
-        <!-- Question 3 -->
 
-       <!-- Question 3 -->
+        <!-- ================================= -->
+        <!-- QUESTION 3 -->
+        <!-- ================================= -->
 
-<div class="question">
+        <div class="question">
 
-    <h2>3. Generate a Dictionary</h2>
+            <h2>
+                3. Generate a Dictionary
+            </h2>
 
-    <p>
-        With a given integral number n, write a program to generate
-        a dictionary that contains (i, i*i).
-    </p>
+            <p>
+                With a given integral number n, write a program
+                to generate a dictionary that contains
+                (i, i*i).
+            </p>
 
-    <h3>Python Code</h3>
 
-    <pre>
+            <h3>Python Code</h3>
+
+            <pre>
 n = int(input("Enter a number: "))
 
 result = {}
@@ -235,51 +311,131 @@ for i in range(1, n + 1):
     result[i] = i * i
 
 print(result)
-    </pre>
+            </pre>
 
-    <h3>Enter Number</h3>
 
-    <input
-        type="number"
-        id="numberInput"
-        placeholder="Enter n"
-        min="1"
-    >
+            <h3>Enter Number</h3>
 
-    <button onclick="generateDictionary()">
-        Generate Dictionary
-    </button>
+            <input
+                type="number"
+                id="numberInput"
+                placeholder="Example: 5"
+                min="1"
+            >
 
-    <h3>Output</h3>
+            <br>
 
-    <div class="output" id="dictionaryOutput">
-        Enter a number above.
+            <button onclick="generateDictionary()">
+                Generate Dictionary
+            </button>
+
+
+            <h3>Output</h3>
+
+            <div
+                class="output"
+                id="dictionaryOutput"
+            >
+                Enter a number above.
+            </div>
+
+        </div>
+
+
     </div>
 
-</div>
 
-<script>
 
-function generateDictionary() {
+    <!-- FOOTER -->
 
-    let n = document.getElementById("numberInput").value;
+    <div class="footer">
 
-    if (n === "" || n < 1) {
-        document.getElementById("dictionaryOutput").innerHTML =
-            "Please enter a positive integer.";
-        return;
-    }
+        Python Programming Assignment
+        &nbsp; | &nbsp;
+        Karanki Mahesh
 
-    n = parseInt(n);
+    </div>
 
-    let result = {};
 
-    for (let i = 1; i <= n; i++) {
-        result[i] = i * i;
-    }
 
-    document.getElementById("dictionaryOutput").innerHTML =
-        JSON.stringify(result);
-}
+    <!-- JAVASCRIPT FOR BROWSER DEMONSTRATION -->
 
-</script>
+    <script>
+
+
+        // ==========================================
+        // QUESTION 2
+        // ==========================================
+
+        function convertString() {
+
+            let input =
+                document.getElementById("charactersInput").value.trim();
+
+
+            if (input === "") {
+
+                document.getElementById("stringOutput").textContent =
+                    "Please enter characters.";
+
+                return;
+
+            }
+
+
+            let characters = input.split(/\s+/);
+
+            let result = characters.join("");
+
+
+            document.getElementById("stringOutput").textContent =
+                result;
+
+        }
+
+
+
+        // ==========================================
+        // QUESTION 3
+        // ==========================================
+
+        function generateDictionary() {
+
+            let input =
+                document.getElementById("numberInput").value;
+
+
+            if (input === "" || Number(input) < 1) {
+
+                document.getElementById("dictionaryOutput").textContent =
+                    "Please enter a positive integer.";
+
+                return;
+
+            }
+
+
+            let n = parseInt(input);
+
+            let result = {};
+
+
+            for (let i = 1; i <= n; i++) {
+
+                result[i] = i * i;
+
+            }
+
+
+            document.getElementById("dictionaryOutput").textContent =
+                JSON.stringify(result);
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
