@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Python Programming Assignment</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8fc;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0b5ed7, #087fba);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .student {
+            background: white;
+            padding: 20px 25px;
+            border-radius: 14px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid #0b5ed7;
+        }
+
+        .student strong {
+            color: #0b5ed7;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            color: #0b5ed7;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        button {
+            background: #0b5ed7;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #084298;
+        }
+
+        input {
+            width: 180px;
+            padding: 11px;
+            border: 1px solid #bbb;
+            border-radius: 7px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .output {
+            margin-top: 18px;
+            background: #eef6ff;
+            border: 1px solid #c9e2ff;
+            padding: 18px;
+            border-radius: 10px;
+            min-height: 50px;
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .code {
+            background: #101820;
+            color: #e8f1ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #172033;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e7f1ff;
+            color: #0b5ed7;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 700px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            input {
+                width: 100%;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Python Programming Assignment</h1>
+    <p>Python Programming Solutions</p>
+</header>
+
+<div class="container">
+
+    <div class="student">
+        <strong>Student:</strong> Karanki Mahesh
+        <br>
+        <strong>Language:</strong> Python 3
+        <br>
+        <span class="tag">Programming Assignment</span>
+    </div>
+
+
+    <!-- PROGRAM 1 -->
+    <div class="card">
+
+        <h2>1. Numbers Divisible by 7</h2>
+
+        <p>
+            Find all numbers between 2000 and 3200 which are
+            divisible by 7 but are not multiples of 3.
+        </p>
+
+        <button onclick="program1()">▶ Run Program 1</button>
+
+        <div class="output" id="output1">
+            Click the button to run the program.
+        </div>
+
+        <div class="code">
+# Python Program 1
+
+numbers = []
+
+for i in range(2000, 3201):
+    if i % 7 == 0 and i % 3 != 0:
+        numbers.append(str(i))
+
+print(",".join(numbers))
+        </div>
+
+    </div>
+
+
+    <!-- PROGRAM 2 -->
+    <div class="card">
+
+        <h2>2. Convert List of Characters into String</h2>
+
+        <p>
+            Convert a given list of characters into a single string.
+        </p>
+
+        <p>
+            Example:
+            ["C", "o", "d", "i", "n", "g"]
+            → Coding
+        </p>
+
+        <button onclick="program2()">▶ Run Program 2</button>
+
+        <div class="output" id="output2">
+            Click the button to run the program.
+        </div>
+
+        <div class="code">
+# Python Program 2
+
+characters = ["C", "o", "d", "i", "n", "g"]
+
+result = "".join(characters)
+
+print(result)
+        </div>
+
+    </div>
+
+
+    <!-- PROGRAM 3 -->
+    <div class="card">
+
+        <h2>3. Generate Dictionary of Squares</h2>
+
+        <p>
+            Enter an integer n to generate a dictionary containing
+            numbers from 1 to n and their squares.
+        </p>
+
+        <input
+            type="number"
+            id="numberInput"
+            placeholder="Enter n"
+            min="1"
+        >
+
+        <button onclick="program3()">▶ Run Program 3</button>
+
+        <div class="output" id="output3">
+            Enter a number and click the button.
+        </div>
+
+        <div class="code">
+# Python Program 3
+
+n = int(input("Enter a number: "))
+
+result = {}
+
+for i in range(1, n + 1):
+    result[i] = i * i
+
+print(result)
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <p>Python Programming Assignment</p>
+    <p>Karanki Mahesh</p>
+</footer>
+
+
+<script>
+
+    // PROGRAM 1
+    function program1() {
+
+        let numbers = [];
+
+        for (let i = 2000; i <= 3200; i++) {
+
+            if (i % 7 === 0 && i % 3 !== 0) {
+                numbers.push(i);
+            }
+
+        }
+
+        document.getElementById("output1").textContent =
+            numbers.join(",");
+    }
+
+
+    // PROGRAM 2
+    function program2() {
+
+        let characters = ["C", "o", "d", "i", "n", "g"];
+
+        let result = characters.join("");
+
+        document.getElementById("output2").textContent =
+            result;
+    }
+
+
+    // PROGRAM 3
+    function program3() {
+
+        let input = document.getElementById("numberInput").value;
+
+        if (input === "" || input < 1) {
+
+            document.getElementById("output3").textContent =
+                "Please enter a positive integer.";
+
+            return;
+        }
+
+        let n = parseInt(input);
+
+        let result = {};
+
+        for (let i = 1; i <= n; i++) {
+
+            result[i] = i * i;
+
+        }
+
+        document.getElementById("output3").textContent =
+            JSON.stringify(result);
+    }
+
+</script>
+
+</body>
+</html>
